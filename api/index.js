@@ -8,12 +8,10 @@ app.get('/', (c) => {
 })
 
 app.get('/lotofacil', async (c) => {
-  const response = await fetch('https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil', {
+  const response = await fetch('https://loteriascaixa-api.herokuapp.com/api/lotofacil', {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      // A API da Caixa pode exigir um header Referer, dependendo do CORS. Se necessário, adicione:
-      // 'Referer': 'https://loterias.caixa.gov.br/'
     }
   });
   const data = await response.json();
